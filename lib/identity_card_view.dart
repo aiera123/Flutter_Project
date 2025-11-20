@@ -14,7 +14,7 @@ class _IdentityCardViewState extends State<IdentityCardView> {
       appBar: AppBar(
         title: text(
           'My Card',
-          style: TextStyle(color: Colors.red, fontSize: 27),
+          style: TextStyle(color: Colors.purpleAccent, fontSize: 27),
         ),
       ),
       body: Center(
@@ -29,8 +29,8 @@ class _IdentityCardViewState extends State<IdentityCardView> {
           child: Row(
             children: [
               Image(image: AssetImage('assests/images/Strangersthings.jpg'))
-              ),
-            ],
+              )],
+            ]),
           ),
         ),
       ),
