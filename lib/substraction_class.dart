@@ -79,4 +79,5 @@ class _SubstractionClassState extends State<substraction_class> {
               },
               child: Text("Subtract Numbers"),
             ),
-          )
+          )]))));
+        }   }

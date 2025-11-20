@@ -3,6 +3,7 @@ import 'first_class.dart';
 import 'multiplication_class.dart';
 import 'simple_interest_class.dart';
 import 'substraction_class.dart';
+import 'identity_card_view.dart';
 
 void main() {
   runApp(const MyApp());
