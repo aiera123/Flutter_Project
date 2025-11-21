@@ -19,23 +19,33 @@ class _IdentityCardViewState extends State<IdentityCardView> {
       ),
       body: Center(
         child: Container(
-          height: 200,
           width: double.infinity,
             margin: EdgeInsets.all(20),
+            padding: EdgeInsets.all(10),
             decoration: BoxDecoration(
             color: Colors.white70,
             borderRadius: BorderRadius.circular(12),
           border: Border.all(color: Colors.cyanAccent),),
           child: Row(
             children: [
-              Image(image: AssetImage('assests/images/Strangersthings.jpg'))
-              )],
-            ]),
+           Container(
+             height: 150,
+             width: 150,
+             decoration: BoxDecoration(
+               image: DecorationImage(image: AssetImage('assests/images/starngersthings.jpg'),
+               fit: BoxFit.cover,
+               ),
+               shape: BoxShape.circle,
+               //borderRadius: BorderRadius.all(Radius.circular(12)), just to make the image rectangle as it is
+             ),
+           ),
+              ],
+            ),
           ),
+        sizedBox(width: 20),
         ),
-      ),
-    ),
-    )
+      )
+
   }
 }
 
