@@ -75,7 +75,7 @@ class _IdentityCardViewState extends State<IdentityCardView> {
             textWidget('Address:', 'Bhaktapur'),
               textWidget('Level:' ,'BCA'),
               textWidget('Phone:' , '+977-98000000'),
-              textWidget('Expiry Date:' '2030 A.D')
+              textWidget('Expiry Date:' , '2030 A.D'),
               ],
           ),
         ),
