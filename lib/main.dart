@@ -1,3 +1,4 @@
+import 'package:amine/home_page.dart';
 import 'package:flutter/material.dart';
 import 'first_class.dart';
 import 'multiplication_class.dart';
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: const HomeScreen(),
+      home: HomePage(),
     );
   }
 }
