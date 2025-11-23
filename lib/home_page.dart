@@ -26,15 +26,11 @@ class _HomePageState extends State<HomePage> {
           body: Column(
             children: [
               ElevatedButton(onPressed: () {}, child: Text('Login')),
-              ElevatedButton(onPressed: () {
-                Navigator.push(
-                  context,
-                    MaterialPageRoute(
-                      builder: (context) => const IdentityCardView(),
-                    ),
-                );
-              },
-                  child: Text('Identity Card')),
+              ElevatedButton(onPressed: (
+              onPressed: (){
+                Navigator.pushNamed(context, AppRoute.identityCard);
+    },
+                  child: Text('Identity Card'),),
               ElevatedButton(onPressed: () {}, child: Text('Monday Class')),
               ElevatedButton(onPressed: () {}, child: Text('Swastik Class')),
             ],
