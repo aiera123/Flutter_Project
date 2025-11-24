@@ -1,14 +1,16 @@
 import 'package:amine/app_routes.dart';
 import 'package:amine/home_page.dart';
 import 'package:flutter/material.dart';
-import 'first_class.dart';
-import 'multiplication_class.dart';
-import 'simple_interest_class.dart';
-import 'substraction_class.dart';
-import 'identity_card_view.dart';
+//import 'first_class.dart';
+//import 'multiplication_class.dart';
+//import 'simple_interest_class.dart';
+//import 'substraction_class.dart';
+//import 'identity_card_view.dart';
+
+import 'app_routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -20,55 +22,6 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: AppRoute.home,
       routes: AppRoute.getAppRoutes(),
-
-    );
-  }
-}
-
-class HomeScreen extends StatelessWidget {
-  const HomeScreen({super.key});
-
-  @override
- // Widget build(BuildContext context) {
-   // return Scaffold(
-     // appBar: AppBar(title: const Text("My Classes")),
-     ///// body: Center(
-        //child: Column(
-        //  mainAxisAlignment: MainAxisAlignment.center,
-         // children: [
-           // ElevatedButton(
-           //   child: const Text("Multiplication"),
-            //  onPressed: () {
-              //  Navigator.push(
-               //   context,
-                //  MaterialPageRoute(
-               / ///      builder: (context) => const MultiplicationClass()),
-               // );
-            //  },
-     //       ),
-         ///   ElevatedButton(
-          ///    child: const Text("Simple Interest"),
-          //    onPressed: () {
-            //    Navigator.push(
-               //   context,
-                  MaterialPageRoute(
-                  //    builder: (context) => const SimpleInterestClass()),
-                );
-              },
-            ),
-            ElevatedButton(
-              child: const Text("Subtraction"),
-              onPressed: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                      builder: (context) => const SubstractionClass()),
-                );
-              },
-         //   ),
-         // ],
-      //  ),
-   //   ),
     );
   }
 }

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -11,18 +10,34 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: 'Login page',
+      backgroundColor: Color(0xffEFECE3),
+      body: Padding(
+        padding: const EdgeInsets.only(
+          top: 60,
+          left: 20,
+          right: 20,
+          bottom: 20,
+        ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Image.asset('assets/images/logo.png', width: 200),
+            SizedBox(height: 12),
+            Text(
+              'Welcome Back,',
+              style: TextStyle(
+                fontSize: 32,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Text(
+              'Make it work, make it right, make it fast.',
+              style: TextStyle(fontSize: 18, color: Colors.black),
+            ),
+          ],
+        ),
       ),
-        body: Column(
-            children: [
-            ElevatedButton(onPressed: () {}, child: Text('Login')),
-    ElevatedButton(onPressed: (
-    onPressed: (){
-    Navigator.pushNamed(context, AppRoute.loginscreen);
-    },
-    child: Text('Login Button'),),
-    )
-    )
+    );
   }
 }

@@ -1,6 +1,8 @@
 import 'package:amine/identity_card_view.dart';
 import 'package:flutter/material.dart';
 
+import 'app_routes.dart';
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -12,32 +14,36 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blueAccent,
+      backgroundColor: Color(0xffEFECE3),
       appBar: AppBar(
-        centerTitle: True,
+        centerTitle: true,
         title: const Text(
           'Home Page',
           style: TextStyle(
-            color: Colors.white70,
+            color: Colors.white,
             fontWeight: FontWeight.w600,
-              fontSize: 20,
-          )
-          );
-          body: Column(
-            children: [
-              ElevatedButton(onPressed: () {}, child: Text('Login')),
-              ElevatedButton(onPressed: (
-              onPressed: (){
-                Navigator.pushNamed(context, AppRoute.identityCard);
-    },
-                  child: Text('Identity Card'),),
-              ElevatedButton(onPressed: () {}, child: Text('Monday Class')),
-              ElevatedButton(onPressed: () {}, child: Text('Swastik Class')),
-            ],
-          )
+            fontSize: 20,
+          ),
         ),
+        backgroundColor: Color(0xff313647),
+        toolbarHeight: 100,
+      ),
+      body: Column(
+        children: [
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoute.login);
+            },
+            child: Text('Login'),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              Navigator.pushNamed(context, AppRoute.identityCard);
+            },
+            child: Text('Identity Card'),
+          ),
+        ],
       ),
     );
   }
 }
-
