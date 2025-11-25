@@ -135,7 +135,48 @@ import 'package:flutter/material.dart';
         ),),
       )
       SizedBox(height: 20),
-      
+      OutlinedButton(
+        style: OutlinedButton.styleFrom(,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+        minimumSize: Size(double.infinity, 56),
+    side: BorderSide(color: Colors.black, width: 1.5),
+      ),
+      onPressed: () {},
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Image.asset(
+            'assets/images/Logo-google-icon-PNG.png',
+            width: 26,
+            height: 26,
+          )
+          Text('Sign-In with Google', style: AppTextStyle.poppinsMedium.copyWith(
+          fontSize: 18,
+          color: Colors.black,
+        ),),
+        ],
+      ))
+    SizedBox(height: 20),
+    Row(
+    mainAxisAlignment: MainAxisAlignment.center,
+    children: [
+      Text('Don\'t have an account?',
+    style: AppTextstyle.poppinsMedium.copyWith(
+    fontSize:16,
+    color: Colors.black,
+    ),
+    ),
+    SizedBox(width: 8),
+    Text(
+    'Signup',
+    style: AppTextStyle.poppinsMedium.copyWith(
+    fontSize: 18,
+    color: Colors.blue,
+    ),
+    )
+    ],)
     ],
     
     ),
