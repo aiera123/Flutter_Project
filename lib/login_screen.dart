@@ -100,6 +100,12 @@ import 'package:flutter/material.dart';
   ),
   ),
   ),
+    SizedBox(height: 10),
+    Align(
+      alignment: Alignment.centerRight,
+      child: TextButton(onPressed: () {},
+          child: Text('forget Password ?')),
+    ),
   ],
   ),
   ),
