@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'app_text_style.dart';
+import 'app_text_styles.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

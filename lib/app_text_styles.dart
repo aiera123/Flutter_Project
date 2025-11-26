@@ -1,29 +1,30 @@
-import 'dart:ui';
-
-import 'package:amine/material.dart';
+import 'package:flutter/material.dart';
 
 class AppTextStyle {
   AppTextStyle._();
 
-  static TextStyle poppinsRegular = TextStyle(
-    fontFamily: 'poppins',
-      color: Colors.black,
-  );
-  static TextStyle poppinsMedium = TextStyle(
-  fontFamily: 'poppins-Medium',
+  static const TextStyle poppinsRegular = TextStyle(
+    fontFamily: 'Poppins-Regular',
     color: Colors.black,
-  );
-  static TextStyle poppinsExtraBold = TextStyle(
-    fontFamily: 'poppins-ExtraBold',
-    color: Colors.black,
-  );
-  static TextStyle poppinsSemiBold = TextStyle(
-    fontFamily: 'poppins-SemiBold',
-    color: Colors.black,
-  );
-  static TextStyle poppinsBold = TextStyle(
-    fontFamily: 'poppins-Bold',
-    color: Colors.grey,
   );
 
+  static const TextStyle poppinsMedium = TextStyle(
+    fontFamily: 'Poppins-Medium',
+    color: Colors.black,
+  );
+
+  static const TextStyle poppinsBold = TextStyle(
+    fontFamily: 'Poppins-Bold',
+    color: Colors.black,
+  );
+
+  static const TextStyle poppinsSemiBold = TextStyle(
+    fontFamily: 'Poppins-SemiBold',
+    color: Colors.black,
+  );
+
+  static const TextStyle poppinsExtraBold = TextStyle(
+    fontFamily: 'Poppins-ExtraBold',
+    color: Colors.black,
+  );
 }
