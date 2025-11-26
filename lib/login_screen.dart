@@ -52,7 +52,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'E-Mail',
                   hintStyle: AppTextStyle.poppinsRegular.copyWith(
                     fontSize: 16,
-                    color: Colors.black.withOpacity(0.6),
+                    color: Colors.black.withValues(alpha: 0.6),
                   ),
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.grey, width: 1),
@@ -79,7 +79,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   hintText: 'Password',
                   hintStyle: AppTextStyle.poppinsRegular.copyWith(
                     fontSize: 16,
-                    color: Colors.black.withOpacity(0.6),
+                    color: Colors.black.withValues(alpha: 0.6),
+
                   ),
                   border: OutlineInputBorder(
                     borderSide: const BorderSide(color: Colors.grey, width: 1),
