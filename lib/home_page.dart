@@ -1,4 +1,4 @@
-import 'package:amine/identity_card_view.dart';
+
 import 'package:flutter/material.dart';
 
 import 'app_routes.dart';
@@ -14,34 +14,41 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffEFECE3),
+      backgroundColor: Color(0xffA0BEFF),
       appBar: AppBar(
         centerTitle: true,
         title: const Text(
           'Home Page',
           style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w600,
-            fontSize: 20,
+            fontSize: 25,
+            fontWeight: FontWeight.bold,
           ),
         ),
-        backgroundColor: Color(0xff313647),
-        toolbarHeight: 100,
       ),
       body: Column(
         children: [
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoute.login);
-            },
-            child: Text('Login'),
-          ),
-          ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoute.identityCard);
-            },
-            child: Text('Identity Card'),
-          ),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(
+              context,
+              AppRoute.login,
+            );
+          }, child: Text('Login')),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(
+              context,
+              AppRoute.signup,
+            );
+          }, child: Text('Signup')),
+          ElevatedButton(onPressed: () {
+            Navigator.pushNamed(
+              context,
+              AppRoute.identityCard,
+            );
+          }, child: Text('Identity Card')),
+          ElevatedButton(onPressed: () {
+
+          }, child: Text('Monday Class')),
+          ElevatedButton(onPressed: () {}, child: Text('Simple Interest')),
         ],
       ),
     );
