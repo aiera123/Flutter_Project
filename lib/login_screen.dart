@@ -48,7 +48,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   validator: (value) {
                     if (value == null || value.isEmpty){
                       return 'please enter your email';
-                    } else if (value.contains('@')){
+                    } else if (!value.contains('@')){
                       return 'please enter a valid email';
                     }
                     return null;
@@ -141,6 +141,8 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                   if (formKey.currentState!.validate()){
+                    print('Email : ${emailController.text}');
+                    print('Password : ${passwordController.text}');
                   }
                   },
                   child: Text('Login'.toUpperCase(),
