@@ -13,50 +13,52 @@ class _LoginScreenState extends State<LoginScreen> {
   final emailController = TextEditingController();
   final passwordController = TextEditingController();
   bool isObscure = true;
-  final formkey = GlobalKey<FormState>();
-  @override
+  final formKey = GlobalKey<FormState>();
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xffF3E8DF),
+      backgroundColor: Color(0xffEFECE3),
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 60, left: 20, right: 20, bottom: 20),
+          padding: const EdgeInsets.only(
+            top: 60,
+            left: 24,
+            right: 24,
+            bottom: 20,
+          ),
           child: Form(
-            key: formkey,
+            key: formKey,
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Image.asset(
-                  'assets/images/logo.png',
-                  width: 200,
-                ),
+                Image.asset('assets/images/logo.png', width: 200),
                 SizedBox(height: 12),
                 Text(
-                  'Welcome Back',
+                  'Welcome Back,',
                   style: AppTextStyle.poppinsBold.copyWith(fontSize: 28),
                 ),
                 Text(
-                  'Make it work, Make it right, Make it fast',
-                  style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 16),
+                  'Make it work, make it right, make it fast.',
+                  style: AppTextStyle.poppinsMedium.copyWith(fontSize: 16),
                 ),
                 SizedBox(height: 30),
                 TextFormField(
-                  style: AppTextStyle.poppinsRegular.copyWith(fontSize: 14),
+                  style: AppTextStyle.poppinsRegular.copyWith(fontSize: 16),
                   keyboardType: TextInputType.emailAddress,
                   controller: emailController,
                   validator: (value) {
-                    if (value == null || value.isEmpty){
-                      return 'please enter your email';
-                    } else if (!value.contains('@')){
-                      return 'please enter a valid email';
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your email';
+                    } else if (!value.contains('@')) {
+                      return 'Please enter a valid email';
                     }
                     return null;
                   },
                   decoration: InputDecoration(
                     hintText: 'E-Mail',
                     hintStyle: AppTextStyle.poppinsRegular.copyWith(
-                      fontSize: 14,
+                      fontSize: 16,
                       color: Colors.black.withOpacity(0.6),
                     ),
                     border: OutlineInputBorder(
@@ -76,14 +78,13 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 SizedBox(height: 14),
                 TextFormField(
-                  style: AppTextStyle.poppinsRegular.copyWith(fontSize: 14),
+                  style: AppTextStyle.poppinsRegular.copyWith(fontSize: 16),
                   controller: passwordController,
                   validator: (value) {
-                    if (value == null || value.isEmpty){
-                      return'please enter your password';
-                    }
-                    else if (value.length<8){
-                      return'password must be at least 8 characters';
+                    if (value == null || value.isEmpty) {
+                      return 'Please enter your password';
+                    } else if (value.length < 8) {
+                      return 'Password must be at least 8 characters';
                     }
                     return null;
                   },
@@ -91,7 +92,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   decoration: InputDecoration(
                     hintText: 'Password',
                     hintStyle: AppTextStyle.poppinsRegular.copyWith(
-                      fontSize: 14,
+                      fontSize: 16,
                       color: Colors.black.withOpacity(0.6),
                     ),
                     border: OutlineInputBorder(
@@ -114,38 +115,43 @@ class _LoginScreenState extends State<LoginScreen> {
                           isObscure = !isObscure;
                         });
                       },
-                      icon: Icon(isObscure ? Icons.visibility_off : Icons.visibility),
+                      icon: Icon(
+                        isObscure ? Icons.visibility_off : Icons.visibility,
+                      ),
                     ),
-                  ),
-                ),
-
-                SizedBox(height: 10),
-                Align(
-                  alignment:Alignment.centerRight,
-                  child: TextButton(onPressed: () {}, child: Text('Forgot Password?',
-                    style: AppTextStyle.poppinsMedium.copyWith(
-                      color: Colors.blue,
-                      fontSize: 16,
-                    ),
-                  ),
                   ),
                 ),
                 SizedBox(height: 20),
+                Align(
+                  alignment: Alignment.centerRight,
+                  child: TextButton(
+                    onPressed: () {},
+                    child: Text(
+                      'Forgot Password?',
+                      style: AppTextStyle.poppinsMedium.copyWith(
+                        color: Colors.blue,
+                        fontSize: 16,
+                      ),
+                    ),
+                  ),
+                ),
+                SizedBox(height: 10),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.black,
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    minimumSize: Size(double.infinity,56),
+                    minimumSize: Size(double.infinity, 60),
                   ),
                   onPressed: () {
-                  if (formKey.currentState!.validate()){
-                    print('Email : ${emailController.text}');
-                    print('Password : ${passwordController.text}');
-                  }
+                    if (formKey.currentState!.validate()) {
+                      print('Email : ${emailController.text}');
+                      print('Password : ${passwordController.text}');
+                    }
                   },
-                  child: Text('Login'.toUpperCase(),
+                  child: Text(
+                    'Login'.toUpperCase(),
                     style: AppTextStyle.poppinsMedium.copyWith(
                       fontSize: 20,
                       color: Colors.white,
@@ -158,7 +164,7 @@ class _LoginScreenState extends State<LoginScreen> {
                   child: Text(
                     'or'.toUpperCase(),
                     style: AppTextStyle.poppinsRegular.copyWith(
-                      color: Colors.black,
+                      color: Colors.black54,
                       fontSize: 18,
                     ),
                   ),
@@ -167,22 +173,23 @@ class _LoginScreenState extends State<LoginScreen> {
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(0),
+                      borderRadius: BorderRadius.circular(8),
                     ),
-                    minimumSize: Size(double.infinity,60),
-                    side: BorderSide(color: Colors.black,width: 1.5),
+                    minimumSize: Size(double.infinity, 60),
+                    side: BorderSide(color: Colors.black, width: 1.5),
                   ),
                   onPressed: () {},
                   child: Row(
-                    mainAxisAlignment:MainAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/google-logo.png',
+                        'assets/images/google.png',
                         width: 26,
                         height: 26,
                       ),
                       SizedBox(width: 10),
-                      Text('Sign-In with Google',
+                      Text(
+                        'Sign-In with Google',
                         style: AppTextStyle.poppinsMedium.copyWith(
                           fontSize: 18,
                           color: Colors.black,
@@ -191,27 +198,29 @@ class _LoginScreenState extends State<LoginScreen> {
                     ],
                   ),
                 ),
-                SizedBox(height: 20),
+                SizedBox(height: 30),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Text('Don\'t have an account?',
-                        style: AppTextStyle.poppinsMedium.copyWith(
-                          fontSize: 18,
-                          color: Colors.black,
-                        )
+                    Text(
+                      'Don\'t have an account?',
+                      style: AppTextStyle.poppinsMedium.copyWith(
+                        fontSize: 18,
+                        color: Colors.black,
+                      ),
                     ),
                     SizedBox(width: 8),
                     GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context,AppRoute.signup );
+                        Navigator.pushNamed(context, AppRoute.login);
                       },
-                    child: Text(
+                      child: Text(
                         'Signup',
                         style: AppTextStyle.poppinsMedium.copyWith(
                           fontSize: 18,
                           color: Colors.blue,
-                        )
+                        ),
+                      ),
                     ),
                   ],
                 ),
