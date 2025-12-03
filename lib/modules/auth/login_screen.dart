@@ -1,4 +1,5 @@
 import 'package:amine/constants/app_routes.dart';
+import 'package:amine/modules/home/bottom_navigation.dart';
 import 'package:flutter/material.dart';
 import '../../app_text_styles.dart';
 
@@ -146,9 +147,10 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-                      print('Email : ${emailController.text}');
-                      print('Password : ${passwordController.text}');
-                    }
+              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => BottomNavigationView(),
+                  (route) => false,
+              );
+              }
                   },
                   child: Text(
                     'Login'.toUpperCase(),
