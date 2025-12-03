@@ -1,6 +1,6 @@
-import 'package:amine/app_routes.dart';
+import 'package:amine/constants/app_routes.dart';
 import 'package:flutter/material.dart';
-import 'app_text_styles.dart';
+import '../../app_text_styles.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});

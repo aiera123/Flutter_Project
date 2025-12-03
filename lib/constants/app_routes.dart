@@ -1,6 +1,9 @@
-import 'package:amine/identity_card_view.dart';
-import 'package:amine/home_page.dart';
-import 'package:amine/login_screen.dart';
+
+import 'package:amine/modules/extra/home_page.dart';
+
+
+import '../modules/auth/login_screen.dart';
+import '../modules/auth/signup_screen.dart';
 
 class AppRoute {
   AppRoute._();
@@ -20,4 +23,8 @@ class AppRoute {
    // mondayClass: (context) => const MondayClass(),
     //simpleInterest: (context) => const SimpleInterest(),
   };
+}
+
+class IdentityCard {
+  const IdentityCard();
 }
