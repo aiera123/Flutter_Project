@@ -19,6 +19,25 @@ class _BottomNavigationState extends State<BottomNavigation> {
     return Scaffold(
       extendBody: true,
       body: screens[indexs],
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: indexs,
+        onTap: (value) {
+          setState(() {
+            indexs = value;
+          });
+        },
+        showSelectedLabels: false,
+        showUnselectedLabels: false,
+        type: BottomNavigationBarType.fixed,
+        selectedIconTheme: IconThemeData(
+          color: Colors.blue
+        ),
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
+          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
+        ],
+      ),
       );
 
   }
