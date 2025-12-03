@@ -1,19 +1,26 @@
+import 'package:amine/modules/home/dashboard_view.dart';
 import 'package:flutter/material.dart';
 
-class BottomNavigationView  extends StatefulWidget {
-  const ({super.key});
+class BottomNavigation extends StatefulWidget {
+  const BottomNavigation({super.key});
 
   @override
-  State<> createState() => _State();
+  State<BottomNavigation> createState() => _BottomNavigationState();
 }
 
-class _State extends State<> {
+class _BottomNavigationState extends State<BottomNavigation> {
+  int indexs = 0;
+  final screens =[
+     DashboardView(), DashboardView(), DashboardView(),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Bottom'),
-      ),
-    )
+      extendBody: true,
+      body: screens[indexs],
+      );
+
   }
 }
+
