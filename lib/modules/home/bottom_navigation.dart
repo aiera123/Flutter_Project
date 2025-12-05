@@ -1,45 +1,69 @@
 import 'package:amine/modules/home/dashboard_view.dart';
 import 'package:flutter/material.dart';
-
-class BottomNavigation extends StatefulWidget {
-  const BottomNavigation({super.key});
+class BottomNavigationView extends StatefulWidget {
+  const BottomNavigationView({super.key});
 
   @override
-  State<BottomNavigation> createState() => _BottomNavigationState();
+  State<BottomNavigationView> createState() => _BottomNavigationViewState();
 }
 
-class _BottomNavigationState extends State<BottomNavigation> {
+class _BottomNavigationViewState extends State<BottomNavigationView> {
   int indexs = 0;
-  final screens =[
-     DashboardView(), DashboardView(), DashboardView(),
-  ];
+  final screens = [DashboardView(), DashboardView(), DashboardView()];
+
+  void onItemTapped(int index) {
+    setState(() {
+      indexs = index;
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       extendBody: true,
       body: screens[indexs],
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: indexs,
-        onTap: (value) {
-          setState(() {
-            indexs = value;
-          });
-        },
-        showSelectedLabels: false,
-        showUnselectedLabels: false,
-        type: BottomNavigationBarType.fixed,
-        selectedIconTheme: IconThemeData(
-          color: Colors.blue
+      bottomNavigationBar: Container(
+        height: Platform.isIOS ? 120 : 100,
+        decoration: BoxDecoration(
+          border: Border(top: BorderSide(color: Colors.grey)),
         ),
-        items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home_filled), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'Favorites'),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
-        ],
+        child: Theme(
+          data: Theme.of(context).copyWith(
+            canvasColor: Colors.white,
+            primaryColor: Colors.white,
+            hoverColor: Colors.white,
+            splashColor: Colors.white,
+            highlightColor: Colors.white,
+          ),
+          child: BottomNavigationBar(
+            type: BottomNavigationBarType.fixed,
+            currentIndex: indexs,
+            elevation: 0,
+            showUnselectedLabels: false,
+            showSelectedLabels: false,
+            mouseCursor: WidgetStateMouseCursor.clickable,
+            backgroundColor: Colors.white,
+            onTap: onItemTapped,
+            items: [
+              BottomNavigationBarItem(
+                icon: Icon(indexs == 0 ? Icons.home : Icons.home_outlined),
+                label: 'Home',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(
+                  indexs == 1 ? Icons.favorite : Icons.favorite_border,
+                ),
+                label: 'Watchlist',
+              ),
+              BottomNavigationBarItem(
+                icon: Icon(indexs == 2 ? Icons.person : Icons.person_outline),
+                label: 'Profile',
+              ),
+            ],
+          ),
+        ),
       ),
-      );
-
+    );
   }
 }
 

@@ -1,9 +1,7 @@
 import 'package:amine/constants/app_routes.dart';
 import 'package:amine/modules/home/bottom_navigation.dart';
 import 'package:flutter/material.dart';
-import '../../app_text_styles.dart';
 import '../../constants/app_text_styles.dart';
-
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
@@ -148,11 +146,14 @@ class _LoginScreenState extends State<LoginScreen> {
                   ),
                   onPressed: () {
                     if (formKey.currentState!.validate()) {
-              Navigator.pushAndRemoveUntil(context, MaterialPageRoute(builder: (context) => BottomNavigation(),
-                  (route) => false,
-              ),
-              );
-              }
+                      Navigator.pushAndRemoveUntil(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => BottomNavView(),
+                        ),
+                            (route) => false,
+                      );
+                    }
                   },
                   child: Text(
                     'Login'.toUpperCase(),
