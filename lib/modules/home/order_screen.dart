@@ -36,6 +36,46 @@ class _OrderScreenState extends State<OrderScreen> {
                   padding: EdgeInsets.all(16),
                   decoration: BoxDecoration(
                     border: Border.all(color: Colors.grey),
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          RichText(text: TextSpan(
+                            text: 'Order' , style: AppTextStyle.poppinsMedium.copyWith(fontSize: 16),
+                          children: [
+                            TextSpan(text: '#:',
+                            style: AppTextStyle.poppinsSemiBold.copyWith(fontSize: 16, fontStyle: FontStyle.italic),),
+                          ]
+                          ),
+                  ),
+                  Text('\$1.50', style: AppTextStyle.poppinsBold.copyWith(
+                    fontSize: 18,
+                  ),)
+                        ],
+                      ),
+                      Text('Mon, July 3rd',
+                      style: AppTextStyle.poppinsMedium.copyWith(
+                        fontSize: 12,
+                        color: Colors.black,
+                      ),),
+                      SizedBox(height: 12),
+                      Row(
+                        children: [
+                          Container(
+                            decoration: BoxDecoration(
+                              color: Colors.grey.shade300,
+                              borderRadius: BorderRadius.circular(4),
+                              border: Border.all(color: Colors.white),
+                            ),
+                            padding: EdgeInsets.all(4),
+                          )
+                        ],
+                      ),
+                    ],
                   ),
                 )
               ],
