@@ -141,10 +141,10 @@ class _OrderScreenState extends State<OrderScreen> {
                 ),
                 padding: EdgeInsets.all(6),
                 child: Text(
-                  'Shipped',
+                  order[index]['status'],
                   style: AppTextStyle.poppinsSemiBold.copyWith(
                     fontSize: 14,
-                    color: Colors.purple,
+                    color: order[index]['statusColor'],
                   ),
                 ),
               ),
