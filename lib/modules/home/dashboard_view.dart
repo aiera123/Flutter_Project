@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class DashboardView extends StatefulWidget {
   const DashboardView({super.key});
 
@@ -10,10 +11,6 @@ class DashboardView extends StatefulWidget {
 class _DashboardViewState extends State<DashboardView> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Dashboard'),
-      ),
-    )
+    return Scaffold(appBar: AppBar(title: const Text('Dashboard')));
   }
 }
