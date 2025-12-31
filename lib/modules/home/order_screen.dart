@@ -184,7 +184,6 @@ class _OrderScreenState extends State<OrderScreen> {
                 itemCount: orderItems.length,
                 shrinkWrap: true,
                 primary: false,
-
               ),
             ],
           ),
