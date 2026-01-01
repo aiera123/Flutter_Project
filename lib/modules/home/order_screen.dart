@@ -2,6 +2,7 @@ import 'package:amine/constants/app_text_styles.dart';
 import 'package:flutter/material.dart';
 
 
+
 class OrderScreen extends StatefulWidget {
   const OrderScreen({super.key});
 
@@ -10,7 +11,6 @@ class OrderScreen extends StatefulWidget {
 }
 
 class _OrderScreenState extends State<OrderScreen> {
-
   List<Map<String, dynamic>> orderItems = [
     {
       "orderId": "429242424",
@@ -108,7 +108,7 @@ class _OrderScreenState extends State<OrderScreen> {
             ],
           ),
           Text(
-            'Mon, July 3rd',
+            order[index]['date'],
             style: AppTextStyle.poppinsMedium.copyWith(
               fontSize: 12,
               color: Colors.black54,
@@ -177,9 +177,9 @@ class _OrderScreenState extends State<OrderScreen> {
               ListView.separated(
                 separatorBuilder: (context, index) {
                   return SizedBox(height: 10);
-                  },
-                itemBuilder: (context, index){
-                  return orderWidget(orderItems, index);
+                },
+                itemBuilder: (context, indexs) {
+                  return orderWidget(orderItems, indexs);
                 },
                 itemCount: orderItems.length,
                 shrinkWrap: true,
